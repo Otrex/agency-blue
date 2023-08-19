@@ -24,10 +24,6 @@ onMounted(async () => {
     const result = await axios.get(`${config.public.baseURL}/d/${route.params.workspaceId}/wizard`);
     const data = result.data as WizardResponse;
 
-    if (data.agency_wizard.preview_ui !== "one") {
-      return navigateTo("/")
-    }
-
     state.value = data;
   } catch (error) {
     navigateTo("/")
