@@ -1,5 +1,9 @@
 <template>
-  <main>
+   <transition name="fade" mode="out-in"> 
+    <div class="w-full h-screen flex items-center justify-center" v-if="!state">
+      <div> Loading.... </div>
+    </div>
+    <main v-else>
     <BaseHeaderThree :data="state" />
     <Type2HeroT2 :data="state" />
     <Type2HelpYouT2 :data="state" />
@@ -9,9 +13,14 @@
     <SharedReviews :data="state" :header-text-color="'text-[#000]'" />
     <BaseMainFooterTwo :data="state" />
   </main>
+  </transition>
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+  layout: false,
+});
+
 import axios from "axios";
 import { WizardResponse } from "../../type";
 
@@ -30,9 +39,21 @@ onMounted(async () => {
   }
 })
 
-definePageMeta({
-  layout: false,
-});
+useHead(() => ({
+  title: state.value?.agency_wizard.seo.title || "Welcome to Agency Pages",
+  link: [ 
+    { 
+      rel: "icon", 
+      type: "image/png", 
+      href: state.value?.agency_wizard.website_details.favIcon 
+    } 
+  ],
+  script: [
+    { innerHTML: state.value?.agency_wizard.website_details.customJavascript || 'null', type: "text/javascript" },
+  ],
+  
+}))
+
 </script>
 
 <style></style>

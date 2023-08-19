@@ -1,17 +1,35 @@
 <template>
-  <main>
-    <BaseHeaderThree :data="state" />
-    <Type2HeroT2 :data="state"/>
-    <Type2HelpYouT2 :data="state"/>
-    <SharedOurServices :data="state" :header-text-color="'text-[#3B57F4]'" titleColor="text-[#000]"/>
-    <SharedBenefits :data="state" :header-text-color="'text-[#232323]'"/>
-    <SharedAboutUs :data="state" :image="'/images/about_team_2.png'" :header-text-color="'text-[#232323]'" :button-bg="'bg-[#3B57F4]'" />
-    <SharedReviews :data="state" :header-text-color="'text-[#000]'" />
-    <BaseMainFooterTwo />
-  </main>
+  <transition name="fade" mode="out-in">
+    <div class="w-full h-screen flex items-center justify-center" v-if="!state">
+      <div>Loading....</div>
+    </div>
+    <main v-else>
+      <BaseHeaderThree :data="state" />
+      <Type2HeroT2 :data="state" />
+      <Type2HelpYouT2 :data="state" />
+      <SharedOurServices
+        :data="state"
+        :header-text-color="'text-[#3B57F4]'"
+        titleColor="text-[#000]"
+      />
+      <SharedBenefits :data="state" :header-text-color="'text-[#232323]'" />
+      <SharedAboutUs
+        :data="state"
+        :image="'/images/about_team_2.png'"
+        :header-text-color="'text-[#232323]'"
+        :button-bg="'bg-[#3B57F4]'"
+      />
+      <SharedReviews :data="state" :header-text-color="'text-[#000]'" />
+      <BaseMainFooterTwo />
+    </main>
+  </transition>
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+  layout: false,
+});
+
 import axios from "axios";
 import { WizardResponse } from "../type";
 
@@ -21,22 +39,31 @@ const route = useRoute();
 
 onMounted(async () => {
   try {
-    const result = await axios.get(`${config.public.baseURL}/d/${route.params.workspaceId}/wizard`);
+    const result = await axios.get(
+      `${config.public.baseURL}/d/${route.params.workspaceId}/wizard`
+    );
     const data = result.data as WizardResponse;
 
     if (data.agency_wizard.preview_ui !== "one") {
-      return navigateTo("/")
+      return navigateTo("/");
     }
 
     state.value = data;
   } catch (error) {
-    navigateTo("/")
+    navigateTo("/");
   }
-})
-
-definePageMeta({
-  layout: false,
 });
+
+useHead(() => ({
+  title: state.value?.agency_wizard.seo.title || "Welcome to Agency Pages",
+  link: [ 
+    { 
+      rel: "icon", 
+      type: "image/png", 
+      href: state.value?.agency_wizard.website_details.favIcon 
+    } 
+  ]
+}))
 </script>
 
 <style></style>
