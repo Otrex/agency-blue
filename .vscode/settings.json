@@ -1,7 +1,3 @@
 {
-  "cSpell.words": [
-    "nuxt",
-    "nuxtjs",
-    "tailwindcss"
-  ]
+  "cSpell.words": ["axios", "nuxt", "nuxtjs", "tailwindcss"]
 }

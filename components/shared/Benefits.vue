@@ -1,57 +1,56 @@
 <template>
-    <section class="d-container" id="benefits">
-        <div>
-          <h1
-            :class="`relative sm:pb-[70px] pb-[35px] lg:text-[48px] sm:text-[32px] text-[26px] font-bold text-center ${headerTextColor}`"
-          >
-            Benefits of [COMPANY NAME] <br />
-            Services
-          </h1>
+  <section class="d-container" id="benefits">
+    <div>
+      <h1
+        :class="`relative sm:pb-[70px] pb-[35px] lg:text-[48px] sm:text-[32px] text-[26px] font-bold text-center ${headerTextColor}`"
+      >
+        Benefits of [COMPANY NAME] <br />
+        Services
+      </h1>
 
+      <div
+        class="flex sm:flex-row flex-col sm:space-x-5 space-x-0 sm:space-y-0 space-y-5"
+      >
+        <div class="border-2 sm:p-[30px] p-[14px] rounded-[20px]">
           <div
-            class="flex sm:flex-row flex-col sm:space-x-5 space-x-0 sm:space-y-0 space-y-5"
+            v-for="(text, i) in benefitsOne"
+            :key="i"
+            class="mx-w-[300px] w-full"
           >
-            <div class="border-2 sm:p-[30px] p-[14px] rounded-[20px]">
-              <div
-                v-for="(text, i) in benefitsOne"
-                :key="i"
-                class="mx-w-[300px] w-full"
-              >
-                <h1
-                  class="sm:text-[20px] text-[16px] sm:pt-[30px] pt-[10px] pb-2 font-bold text-[#3B57F4]"
-                >
-                  {{ text.header }}
-                </h1>
-                <p class="sm:text-[16px] text-[14px]">{{ text.desc }}</p>
-              </div>
-            </div>
-            <div class="border-2 sm:p-[30px] p-[14px] rounded-[20px]">
-              <div
-                v-for="(text, i) in benefitsTwo"
-                :key="i"
-                class="mx-w-[300px] w-full"
-              >
-                <h1
-                  class="sm:text-[20px] text-[16px] sm:pt-[30px] pt-[10px] pb-2 font-bold text-[#3B57F4]"
-                >
-                  {{ text.header }}
-                </h1>
-                <p class="sm:text-[16px] text-[14px]">{{ text.desc }}</p>
-              </div>
-            </div>
+            <h1
+              class="sm:text-[20px] text-[16px] sm:pt-[30px] pt-[10px] pb-2 font-bold text-[#3B57F4]"
+            >
+              {{ text.header }}
+            </h1>
+            <p class="sm:text-[16px] text-[14px]">{{ text.desc }}</p>
           </div>
         </div>
-      </section>
+        <div class="border-2 sm:p-[30px] p-[14px] rounded-[20px]">
+          <div
+            v-for="(text, i) in benefitsTwo"
+            :key="i"
+            class="mx-w-[300px] w-full"
+          >
+            <h1
+              class="sm:text-[20px] text-[16px] sm:pt-[30px] pt-[10px] pb-2 font-bold text-[#3B57F4]"
+            >
+              {{ text.header }}
+            </h1>
+            <p class="sm:text-[16px] text-[14px]">{{ text.desc }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script setup lang="ts">
-
 defineProps({
   headerTextColor: {
     type: String,
-    default: 'text-[#333]'
-  }
-})
+    default: "text-[#333]",
+  },
+});
 
 const benefitsOne = ref([
   {

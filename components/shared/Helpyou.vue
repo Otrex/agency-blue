@@ -8,7 +8,16 @@
           <h1
             :class="`relative capitalize sm:pt-[40px] pt-[0px] sm:pb-[70px] pb-[35px] lg:text-[48px] sm:text-[32px] text-[26px] font-bold text-center bg-clip-text text-[${headerTextColor}]`"
           >
-            How can we <span :class="helpTextColor ? `text-[${helpTextColor}]` : `text-[${headerTextColor}]`">help</span> you
+            How can we
+            <span
+              :class="
+                helpTextColor
+                  ? `text-[${helpTextColor}]`
+                  : `text-[${headerTextColor}]`
+              "
+              >help</span
+            >
+            you
           </h1>
           <div
             class="flex sm:flex-row flex-col sm:space-y-0 space-y-6 space-x-[20px] lg:pb-[50px] sm:pb-[50px] pb-[40px]"
@@ -51,11 +60,7 @@
               </button>
             </div>
             <div class="md:w-[50%] w-[100%] relative">
-              <img
-                class="w-full"
-                :src="image"
-                alt="illustration"
-              />
+              <img class="w-full" :src="image" alt="illustration" />
             </div>
           </div>
         </div>
@@ -68,25 +73,25 @@
 defineProps({
   image: {
     type: String,
-    default: ""
+    default: "",
   },
   buttonBg: {
     type: String,
-    default: "#000"
+    default: "#000",
   },
   headerTextColor: {
     type: String,
-    default: "#000"
+    default: "#000",
   },
   introTextColor: {
     type: String,
-    default: "#000"
+    default: "#000",
   },
   helpTextColor: {
     type: String,
-    default: ""
+    default: "",
   },
-})
+});
 </script>
 
 <style scoped></style>

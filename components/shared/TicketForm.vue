@@ -10,7 +10,9 @@
         <form
           class="my-[32px] md:mx-[0] mx-[16px] flex items-center justify-center"
         >
-          <div class="bg-[#fff] rounded-full pl-[20px] flex items-center justify-between">
+          <div
+            class="bg-[#fff] rounded-full pl-[20px] flex items-center justify-between"
+          >
             <img class="mr-[10px]" src="/icons/mail.svg" alt="mail icon" />
             <input type="text" class="m:w-auto w-[45%] bg-transparent" />
             <button

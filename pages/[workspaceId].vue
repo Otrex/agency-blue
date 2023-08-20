@@ -40,7 +40,7 @@ const route = useRoute();
 onMounted(async () => {
   try {
     const result = await axios.get(
-      `${config.public.baseURL}/d/${route.params.workspaceId}/wizard`
+      `${config.public.baseURL}/d/${route.params.workspaceId}/wizard`,
     );
     const data = result.data as WizardResponse;
 
@@ -56,14 +56,14 @@ onMounted(async () => {
 
 useHead(() => ({
   title: state.value?.agency_wizard.seo.title || "Welcome to Agency Pages",
-  link: [ 
-    { 
-      rel: "icon", 
-      type: "image/png", 
-      href: state.value?.agency_wizard.website_details.favIcon 
-    } 
-  ]
-}))
+  link: [
+    {
+      rel: "icon",
+      type: "image/png",
+      href: state.value?.agency_wizard.website_details.favIcon,
+    },
+  ],
+}));
 </script>
 
 <style></style>

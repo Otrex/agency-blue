@@ -35,7 +35,7 @@
         </div>
       </div>
     </section>
-  <div class=" relative bg-gradient-to-b from-[#F0F3FF] to-[#fff]">
+    <div class="relative bg-gradient-to-b from-[#F0F3FF] to-[#fff]">
       <Type2QuoteT2 />
     </div>
   </main>
