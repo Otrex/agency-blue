@@ -19,7 +19,7 @@
               type="submit"
               class="purple-bg-btn md:text-[18px] text-[14px] text-[#fff] md:px-[20px] px-[14px] md:py-[14px] py-[10px] self-end"
             >
-              Get Affilliate Link
+              Get Affiliate Link
             </button>
           </div>
         </form>

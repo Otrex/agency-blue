@@ -1,7 +1,7 @@
 <template>
   <transition name="fade" mode="out-in">
     <div class="w-full h-screen flex items-center justify-center" v-if="!state">
-      <div>Loading....</div>
+      <div class="loading-circle"></div>
     </div>
     <main v-else>
       <BaseHeaderThree :data="state" />
@@ -47,7 +47,7 @@ onMounted(async () => {
 
     state.value = data;
   } catch (error) {
-    navigateTo("/");
+    navigateTo("/404");
   }
 });
 

@@ -7,7 +7,7 @@
         class="py-[60px] w-full flex md:flex-row flex-col items-start justify-between"
       >
         <div class="xl:w-[40%] lg:w-[30%]">
-          <img src="/icons/logo.svg" alt="Footer Logo" />
+          <img :src="data?.agency_wizard.website_details.logo || '/icons/logo.svg'" alt="Footer Logo" />
         </div>
         <div
           class="grid lg:grid-cols-3 md:grid-cols-2 items-start md:mt-[0] mt-[40px]"

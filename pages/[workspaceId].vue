@@ -1,7 +1,7 @@
 <template>
   <transition name="fade" mode="out-in">
     <div class="w-full h-screen flex items-center justify-center" v-if="!state">
-      <div>Loading....</div>
+      <div class="loading-circle"></div>
     </div>
     <main v-else>
       <BaseHeaderThree :data="state" />
@@ -45,7 +45,7 @@ onMounted(async () => {
     const data = result.data as WizardResponse;
 
     if (data.agency_wizard.preview_ui !== "one") {
-      return navigateTo("/");
+      return navigateTo("/404");
     }
 
     state.value = data;

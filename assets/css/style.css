@@ -5,6 +5,21 @@ html {
   scroll-behavior: smooth;
 }
 
+.loading-circle {
+  width: 70px;
+  height: 70px;
+  border: 10px solid #3498db;
+  border-top: 4px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
 body {
   width: 100%;
   max-width: 1920px;

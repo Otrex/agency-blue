@@ -1,3 +1,5 @@
+
+
 <template>
   <main id="quote">
     <section
@@ -11,13 +13,11 @@
             <h2
               class="font-[800] capitalize xl:text-[50px] lg:text-[40px] sm:text-[30px] text-[24px] text-[#3B57F4] mb-[24px]"
             >
-              Unleash Your Brand Potential WIth Marketing Done Right
+              {{data?.agency_wizard.contact.introduction.intro_headline || 'Unleash Your Brand Potential WIth Marketing Done Right'}}
             </h2>
             <p
               class="font-[400] xl:text-[28px] lg:text-[24px] smtext-[20px] text-[16px] text-[#232323] leading-[-1.4px]"
-            >
-              Leverage our Exceptional Services to boost your Online Business
-              growth.
+            v-html="data?.agency_wizard.contact.introduction.intro_desc || 'Leverage our Exceptional Services to boost your Online Business growth.'">
             </p>
             <button
               class="md:mt-[48px] mt-[60px] xl:mb-[120px] lg:mb-[260px] md:mb-[150px] rounded-full md:px-[60px] px-[40px] md:py-[22px] py-[18px] bg-[#3B57F4] text-[20px] text-[#fff]"
@@ -41,7 +41,11 @@
   </main>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { WizardResponse } from "../../type";
+
+defineProps<{ data?: WizardResponse }>();
+</script>
 
 <style scoped>
 .op-hero {
