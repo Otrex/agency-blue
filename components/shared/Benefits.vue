@@ -1,56 +1,77 @@
+
+
 <template>
   <section class="d-container" id="benefits">
-    <div>
-      <h1
-        :class="`relative sm:pb-[70px] pb-[35px] lg:text-[48px] sm:text-[32px] text-[26px] font-bold text-center ${headerTextColor}`"
-      >
-        Benefits of [COMPANY NAME] <br />
-        Services
-      </h1>
+        <div>
+          <h1
+            :class="`relative sm:pb-[70px] pb-[35px] lg:text-[48px] sm:text-[32px] text-[26px] font-bold text-center ${headerTextColor || 'text-[#333]'}`"
+          >
+            Benefits of {{ data?.agency_wizard.website_details.agencyName}} <br />
+            Services
+          </h1>
 
-      <div
-        class="flex sm:flex-row flex-col sm:space-x-5 space-x-0 sm:space-y-0 space-y-5"
-      >
-        <div class="border-2 sm:p-[30px] p-[14px] rounded-[20px]">
           <div
-            v-for="(text, i) in benefitsOne"
-            :key="i"
-            class="mx-w-[300px] w-full"
+            class="flex sm:flex-row flex-col sm:space-x-5 space-x-0 sm:space-y-0 space-y-5"
           >
-            <h1
-              class="sm:text-[20px] text-[16px] sm:pt-[30px] pt-[10px] pb-2 font-bold text-[#3B57F4]"
-            >
-              {{ text.header }}
-            </h1>
-            <p class="sm:text-[16px] text-[14px]">{{ text.desc }}</p>
+            <div class="border-2 sm:p-[30px] p-[14px] rounded-[20px]">
+              <div
+                v-for="(text, i) in benefits.one"
+                :key="i"
+                class="mx-w-[300px] w-full"
+              >
+                <h1
+                  class="sm:text-[20px] text-[16px] sm:pt-[30px] pt-[10px] pb-2 font-bold text-[#3B57F4]"
+                >
+                  {{ text.name }}
+                </h1>
+                <p class="sm:text-[16px] text-[14px]">{{ text.description }}</p>
+              </div>
+            </div>
+            <div class="border-2 sm:p-[30px] p-[14px] rounded-[20px]">
+              <div
+                v-for="(text, i) in benefits.two"
+                :key="i"
+                class="mx-w-[300px] w-full"
+              >
+                <h1
+                  class="sm:text-[20px] text-[16px] sm:pt-[30px] pt-[10px] pb-2 font-bold text-[#3B57F4]"
+                >
+                  {{ text.name }}
+                </h1>
+                <p class="sm:text-[16px] text-[14px]">{{ text.description }}</p>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="border-2 sm:p-[30px] p-[14px] rounded-[20px]">
-          <div
-            v-for="(text, i) in benefitsTwo"
-            :key="i"
-            class="mx-w-[300px] w-full"
-          >
-            <h1
-              class="sm:text-[20px] text-[16px] sm:pt-[30px] pt-[10px] pb-2 font-bold text-[#3B57F4]"
-            >
-              {{ text.header }}
-            </h1>
-            <p class="sm:text-[16px] text-[14px]">{{ text.desc }}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+      </section>
 </template>
 
 <script setup lang="ts">
-defineProps({
-  headerTextColor: {
-    type: String,
-    default: "text-[#333]",
-  },
-});
+import { ServiceBenefit, WizardResponse } from "../../type";
+
+const props = defineProps<{
+  data?: WizardResponse, 
+  headerTextColor: string
+}>();
+
+const benefits = computed(() =>  {
+  const arr = props.data?.agency_wizard.service_benefits || []
+  const half = Math.ceil(arr.length/2);
+
+  const arr1:ServiceBenefit[] = [];
+  const arr2:ServiceBenefit[] = [];
+
+  arr.forEach((el, i) => {
+    if (i >= half) {
+      arr2.push(el);
+      return;
+    }
+    arr1.push(el);
+  })
+
+  return {one: arr1, two: arr2, half}
+})
+
 
 const benefitsOne = ref([
   {

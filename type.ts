@@ -11,6 +11,7 @@ export interface AgencyWizard {
   seo: SEO;
   website_details: WebsiteDetails;
   services: Service[];
+  service_benefits: ServiceBenefit[];
   testimonials: Service[];
   contact: Contact;
   preview_ui: string;
@@ -59,6 +60,14 @@ export interface SEO {
 }
 
 export interface Service {
+  id: number;
+  name: string;
+  description: string;
+  metaImage: null | string;
+  created_at: Date;
+}
+
+export interface ServiceBenefit {
   id: number;
   name: string;
   description: string;
