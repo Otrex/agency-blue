@@ -1,8 +1,8 @@
 <template>
   <section
-      id="about-us"
-      :class="`relative ${bgColor} lg:py-[180px] sm:py-[70px] py-[35px] mt-[80px]`"
-    >
+    id="about-us"
+    :class="`relative ${bgColor} lg:py-[180px] sm:py-[70px] py-[35px] mt-[80px]`"
+  >
     <img v-if="showEclipse" class="absolute top-0 left-0" src="/icons/left_eclipse.svg" alt="illus">
       <div
         class="d-container flex justify-between sm:flex-row flex-col-reverse space-x-[30px] sm:space-y-0 space-y-6"
