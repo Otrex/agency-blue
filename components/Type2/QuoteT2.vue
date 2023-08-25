@@ -43,7 +43,7 @@
           </template>
         </div>
         <div class="flex items-center h-full">
-          <img class="" src="/images/customer_agent.png" alt="photo" />
+          <img class="" :src="data?.agency_wizard.leads_image || '/images/customer_agent.png'" alt="photo" />
         </div>
       </div>
     </section>

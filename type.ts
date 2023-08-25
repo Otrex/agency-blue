@@ -14,6 +14,7 @@ export interface AgencyWizard {
   service_benefits: ServiceBenefit[];
   testimonials: Service[];
   contact: Contact;
+  leads_image: string | null;
   leads_collector: string | null;
   preview_ui: string;
   created_at: Date;
