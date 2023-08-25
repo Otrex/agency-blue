@@ -16,7 +16,7 @@
             class="md:text-[18px] text-[16px] md:mb-[0] mb-[32px] leading-[-1px]"
           >
             <p class="text-[#626262] mb-[4px]">Address</p>
-            <p class="text-[#232323] font-[500]">
+            <p class="text-[#232323] font-[500] sm:pr-3">
               {{data?.agency_wizard.contact.address.address1 || '48180, Eureka Rd, Taylor, Michigan, USA'}}
             </p>
           </div>

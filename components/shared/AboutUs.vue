@@ -11,7 +11,7 @@
       >
         <div class="lg:w-[50%] md:w-[30%] w-[100%] relative">
           <img
-            class="w-full"
+            class="w-full rounded-2xl"
             :src="data?.agency_wizard.contact.about.about_image || image"
             alt="illustration"
           />

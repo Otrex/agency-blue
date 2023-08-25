@@ -20,15 +20,18 @@
               <p class="sm:text-[16px] text-[14px] pb-3" v-html="data?.agency_wizard.contact.help.help_desc">
                 
               </p>
-              <button
-                :class="`py-3 px-6 bg-[#3B57F4] rounded-full text-white mt-[20px]`"
-              >
-                Contact Us
-              </button>
+              <a href="#leads"> 
+                <button
+                  :class="`py-3 px-6 bg-[#3B57F4] rounded-full text-white mt-[20px]`"
+                >
+                  Contact Us
+                </button>
+
+              </a>
             </div>
-            <div class="md:w-[50%] w-[100%] relative">
+            <div class="md:w-[50%] pt-3 w-[100%] relative">
               <img
-                class="w-full"
+                class="w-full rounded-2xl"
                 :src="data?.agency_wizard.contact.help.help_image || '/images/smiling_help_guy.png'"
                 alt="illustration"
               />
