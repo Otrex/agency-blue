@@ -37,7 +37,7 @@
             </form>
           </template>
           <template v-else>
-            <iframe :src="data?.agency_wizard.leads_collector" class="w-full h-full" />
+            <div v-html="data?.agency_wizard.leads_collector"></div>
           </template>
         </div>
         <div class="flex items-center h-full">
