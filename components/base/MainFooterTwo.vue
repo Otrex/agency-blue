@@ -42,13 +42,14 @@
           <div
             class="lg:mt-[0] md:mt-[40px] mt-[40px] flex items-center space-x-[26px]"
           >
-            <img src="/icons/brandico_facebook-rect_blue.svg" alt="facebook" />
+            <img src="/icons/brandico_facebook-rect_blue.svg" alt="facebook" @click="linkTo(data?.agency_wizard.contact.socials.facebook|| '')" />
             <img
               src="/icons/teenyicons_instagram-solid_blue.svg"
               alt="instagram"
+              @click="linkTo(data?.agency_wizard.contact.socials.instagram || '')"
             />
-            <img src="/icons/mdi_twitter_blue.svg" alt="twitter" />
-            <img src="/icons/linkedIn_rect_blue.svg" alt="linkedIn" />
+            <img src="/icons/mdi_twitter_blue.svg" alt="twitter" @click="linkTo(data?.agency_wizard.contact.socials.youtube|| '')" />
+            <img src="/icons/linkedIn_rect_blue.svg" alt="linkedIn" @click="linkTo(data?.agency_wizard.contact.socials.linkedin|| '')" />
           </div>
         </div>
       </div>

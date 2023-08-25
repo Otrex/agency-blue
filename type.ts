@@ -14,20 +14,30 @@ export interface AgencyWizard {
   service_benefits: ServiceBenefit[];
   testimonials: Service[];
   contact: Contact;
+  leads_collector: string | null;
   preview_ui: string;
   created_at: Date;
 }
 
 export interface Contact {
   address: Address;
-  introduction: Introduction;
-  about: About;
-  help: Help;
+  introduction: IIntroduction;
+  about: IAbout;
+  help: IHelp;
+  socials: ISocials;
 }
 
-export interface About {
-  about_desc: string;
-  about_cta: number;
+export interface ISocials {
+  facebook: string;
+  instagram: string;
+  youtube: string;
+  linkedin: string;
+}
+
+export interface IAbout {
+  about_image: null | string;
+  about_desc: null | string;
+  about_cta: null | boolean;
 }
 
 export interface Address {
@@ -41,18 +51,19 @@ export interface Address {
   country: string;
 }
 
-export interface Help {
-  help_headline: null;
-  help_desc: null;
-  help_cta: null;
+export interface IHelp {
+  help_image: null | string;
+  help_headline: null | string;
+  help_desc: null | string;
+  help_cta: null | boolean;
 }
-
-export interface Introduction {
-  intro_headline: string;
-  intro_desc: string;
-  intro_cta: number;
+export interface IIntroduction {
+  intro_headline: null | string;
+  intro_desc: null | string;
+  intro_cta: null | boolean;
+  intro_cta_button_link: null | string;
+  intro_video_url: null | string;
 }
-
 export interface SEO {
   title: null;
   desc: null;

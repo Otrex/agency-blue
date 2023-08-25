@@ -29,7 +29,7 @@
             <div class="md:w-[50%] w-[100%] relative">
               <img
                 class="w-full"
-                src="/images/smiling_help_guy.png"
+                :src="data?.agency_wizard.contact.help.help_image || '/images/smiling_help_guy.png'"
                 alt="illustration"
               />
             </div>

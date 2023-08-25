@@ -20,23 +20,34 @@
             v-html="data?.agency_wizard.contact.introduction.intro_desc || 'Leverage our Exceptional Services to boost your Online Business growth.'">
             </p>
             <button
-              class="md:mt-[48px] mt-[60px] xl:mb-[120px] lg:mb-[260px] md:mb-[150px] rounded-full md:px-[60px] px-[40px] md:py-[22px] py-[18px] bg-[#3B57F4] text-[20px] text-[#fff]"
+              class="md:mt-[48px] mt-[60px] xl:mb-[120px] lg:mb-[260px] md:mb-[150px] 
+              rounded-full md:px-[60px] px-[40px] md:py-[22px] py-[18px] bg-[#3B57F4] text-[20px] text-[#fff]"
+              @click="linkTo(data?.agency_wizard.contact.introduction.intro_cta_button_link || '')"
             >
               Get Started
             </button>
           </div>
           <div class="md:order-2 order-1">
-            <img
+            <iframe
+          class="w-full aspect-video rounded-[2rem]"
+          title="Neve 2.0: Introducing the Header and Footer Builder [NEW]"
+          :data-src="data?.agency_wizard.contact.introduction.intro_video_url || 'https://www.youtube.com/embed/s_o9v2EatW8?feature=oembed'"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          :src="data?.agency_wizard.contact.introduction.intro_video_url || 'https://www.youtube.com/embed/s_o9v2EatW8?feature=oembed'"
+          vnb-frameid="4576"
+        ></iframe>
+            <!-- <img
               class="w-full"
               src="/images/hero_img_3.png"
               alt="illustration"
-            />
+            /> -->
           </div>
         </div>
       </div>
     </section>
     <div class="relative bg-gradient-to-b from-[#F0F3FF] to-[#fff]">
-      <Type2QuoteT2 />
+      <Type2QuoteT2 :data="data" />
     </div>
   </main>
 </template>

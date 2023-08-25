@@ -15,25 +15,30 @@
           <p class="md:text-[18px] text-[16px] text-[#fff] mt-[16px]">
             Fill out your details Below to get a free Consultation.
           </p>
-          <form class="lg:mt-[50px] md:mt-[40px] mt-[24px] text-[#fff]">
-            <input
-              class="md:px-[24px] px-[12px] md:py-[20px] py-[16px] w-full border md:rounded-[100px] rounded-[50px] border-[#DCDCDC] bg-transparent lg:mb-[30px] md:mb-[24px] mb-[20px]"
-              type="text"
-              name="name"
-              placeholder="Full Name"
-            />
-            <input
-              class="md:px-[24px] px-[12px] md:py-[20px] py-[16px] w-full border md:rounded-[100px] rounded-[50px] border-[#DCDCDC] bg-transparent md:mb-[40px] mb-[25px]"
-              type="email"
-              name="email"
-              placeholder="Email Address"
-            />
-            <button
-              class="lg:w-[40%] md:w-[75%] bg-[#fff] md:py-[21px] py-[16px] md:px-[32px] px-[20px] md:text-[20px] text-[16px] text-[#3B57F4] rounded-[100px]"
-            >
-              Get Started
-            </button>
-          </form>
+          <template v-if="!data?.agency_wizard.leads_collector"> 
+            <form class="lg:mt-[50px] md:mt-[40px] mt-[24px] text-[#fff]">
+              <input
+                class="md:px-[24px] px-[12px] md:py-[20px] py-[16px] w-full border md:rounded-[100px] rounded-[50px] border-[#DCDCDC] bg-transparent lg:mb-[30px] md:mb-[24px] mb-[20px]"
+                type="text"
+                name="name"
+                placeholder="Full Name"
+              />
+              <input
+                class="md:px-[24px] px-[12px] md:py-[20px] py-[16px] w-full border md:rounded-[100px] rounded-[50px] border-[#DCDCDC] bg-transparent md:mb-[40px] mb-[25px]"
+                type="email"
+                name="email"
+                placeholder="Email Address"
+              />
+              <button
+                class="lg:w-[40%] md:w-[75%] bg-[#fff] md:py-[21px] py-[16px] md:px-[32px] px-[20px] md:text-[20px] text-[16px] text-[#3B57F4] rounded-[100px]"
+              >
+                Get Started
+              </button>
+            </form>
+          </template>
+          <template v-else>
+            <iframe :src="data?.agency_wizard.leads_collector" class="w-full h-full" />
+          </template>
         </div>
         <div class="flex items-center h-full">
           <img class="" src="/images/customer_agent.png" alt="photo" />
@@ -43,6 +48,10 @@
   </main>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { WizardResponse } from "../../type";
+
+defineProps<{ data?: WizardResponse }>();
+</script>
 
 <style></style>

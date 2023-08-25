@@ -13,7 +13,7 @@
           <div
             class="flex sm:flex-row flex-col sm:space-x-5 space-x-0 sm:space-y-0 space-y-5"
           >
-            <div class="border-2 sm:p-[30px] p-[14px] rounded-[20px]">
+            <div class="border-2 sm:p-[30px] p-[14px] rounded-[20px]" v-if="benefits.one.length">
               <div
                 v-for="(text, i) in benefits.one"
                 :key="i"
@@ -27,7 +27,7 @@
                 <p class="sm:text-[16px] text-[14px]">{{ text.description }}</p>
               </div>
             </div>
-            <div class="border-2 sm:p-[30px] p-[14px] rounded-[20px]">
+            <div class="border-2 sm:p-[30px] p-[14px] rounded-[20px]" v-if="benefits.two.length">
               <div
                 v-for="(text, i) in benefits.two"
                 :key="i"
