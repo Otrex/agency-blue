@@ -21,7 +21,7 @@
             to="#quote"
             class="border-b-2 border-transparent hover:text-[#3B57F4] transition duration-300"
             :class="{ active: isActive('#quote') }"
-            >Quote</NuxtLink
+            >Home</NuxtLink
           >
           <NuxtLink
             to="#our-services"
@@ -44,7 +44,7 @@
         </ul>
       </nav>
       <div class="flex items-center space-x-3">
-        <a href="#">
+        <a href="#footer">
           <button
             class="bg-[#3B57F4] sm:text-[16px] text-[13px] rounded-full text-white px-4 sm:py-3 py-2"
           >

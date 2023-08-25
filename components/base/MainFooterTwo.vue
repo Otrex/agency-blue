@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-[#F0F3FF]">
+  <div id="footer" class="bg-[#F0F3FF]">
     <div
       class="max-w-[1200px] mx-auto xl:px-[10px] lg:px-[30px] lg:px-[60px] md:px-[36px] px-[16px]"
     >
