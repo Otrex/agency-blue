@@ -14,11 +14,14 @@
           :key="i"
           class="mx-w-[300px] w-full"
         >
+        <div class="aspect-[3/2]"> 
           <img
-            class="w-full rounded-t-[10px] mx-auto"
+            class="w-full rounded-t-[10px] w-full object-cover h-full"
             :src="service.metaImage || '/icons/services_img1.svg'"
             alt="icon"
           />
+
+        </div>
           <h1
             :class="`sm:text-[20px] text-[16px] sm:pt-[30px] pt-[10px] ${headerTextColor || 'text-[#333]'} pb-2 font-bold`"
           >

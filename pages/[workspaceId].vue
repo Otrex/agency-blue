@@ -20,7 +20,7 @@
         :button-bg="'bg-[#3B57F4]'"
       />
       <SharedReviews :data="state" :header-text-color="'text-[#000]'" />
-      <BaseMainFooterTwo />
+      <BaseMainFooterTwo :data="state" />
     </main>
   </transition>
 </template>

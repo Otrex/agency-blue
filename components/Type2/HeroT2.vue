@@ -8,7 +8,7 @@
       <div
         class="font_jakarta max-w-[1200px] mx-auto xl:px-[10px] lg:px-[60px] md:px-[24px] sm:px-[80px] pb-[200px]"
       >
-        <div class="w-full flex md:flex-row flex-col gap-[3rem] items-center">
+        <div class="w-full flex md:flex-row flex-col gap-[3rem]">
 
           <div class="md:text-left w-full text-center px-[20px]">
             <h2

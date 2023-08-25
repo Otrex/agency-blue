@@ -4,6 +4,7 @@
       <div class="loading-circle"></div>
     </div>
     <main v-else>
+      <BaseSeo />
       <BaseHeaderThree :data="state" />
       <Type2HeroT2 :data="state" />
       <Type2HelpYouT2 :data="state" />
