@@ -8,12 +8,11 @@
           class="lg:px-[50px] md:px-[24px] px-[16px] lg:py-[g0px] md:py-[24px] py-[20px]"
         >
           <h3
-            v-if="!data?.agency_wizard.leads_collector"
             class="lg:text-[60px] md:text-[40px] sm:text-[28px] text-[24px] text-[#fff] font-[700] md:leading-[65px]"
           >
             Get Free Consultation
           </h3>
-          <p v-if="!data?.agency_wizard.leads_collector" class="md:text-[18px] text-[16px] text-[#fff] mt-[16px]">
+          <p class="md:text-[18px] text-[16px] text-[#fff] mt-[16px]">
             Fill out your details Below to get a free Consultation.
           </p>
           <template v-if="!data?.agency_wizard.leads_collector"> 
