@@ -8,8 +8,9 @@
       <div
         class="font_jakarta max-w-[1200px] mx-auto xl:px-[10px] lg:px-[60px] md:px-[24px] sm:px-[80px] pb-[200px]"
       >
-        <div class="w-full grid md:grid-cols-2 items-center">
-          <div class="md:text-left text-center px-[20px]">
+        <div class="w-full flex md:flex-row flex-col gap-[3rem] items-center">
+
+          <div class="md:text-left w-full text-center px-[20px]">
             <h2
               class="font-[800] capitalize xl:text-[50px] lg:text-[40px] sm:text-[30px] text-[24px] text-[#3B57F4] mb-[24px]"
             >
@@ -20,29 +21,31 @@
             v-html="data?.agency_wizard.contact.introduction.intro_desc || 'Leverage our Exceptional Services to boost your Online Business growth.'">
             </p>
             <button
-              class="md:mt-[48px] mt-[60px] xl:mb-[120px] lg:mb-[260px] md:mb-[150px] 
+              class="md:mt-[48px] mt-[60px]
               rounded-full md:px-[60px] px-[40px] md:py-[22px] py-[18px] bg-[#3B57F4] text-[20px] text-[#fff]"
               @click="linkTo(data?.agency_wizard.contact.introduction.intro_cta_button_link || '')"
             >
               Get Started
             </button>
           </div>
-          <div class="md:order-2 order-1">
+
+          <div class="md:order-2 w-full order-1">
             <iframe
-          class="w-full aspect-video rounded-[2rem]"
-          title="Neve 2.0: Introducing the Header and Footer Builder [NEW]"
-          :data-src="data?.agency_wizard.contact.introduction.intro_video_url || 'https://www.youtube.com/embed/s_o9v2EatW8?feature=oembed'"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          :src="data?.agency_wizard.contact.introduction.intro_video_url || 'https://www.youtube.com/embed/s_o9v2EatW8?feature=oembed'"
-          vnb-frameid="4576"
-        ></iframe>
+              class="w-full aspect-video rounded-[2rem]"
+              title="Neve 2.0: Introducing the Header and Footer Builder [NEW]"
+              :data-src="data?.agency_wizard.contact.introduction.intro_video_url || 'https://www.youtube.com/embed/s_o9v2EatW8?feature=oembed'"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              :src="data?.agency_wizard.contact.introduction.intro_video_url || 'https://www.youtube.com/embed/s_o9v2EatW8?feature=oembed'"
+              vnb-frameid="4576"
+            ></iframe>
             <!-- <img
               class="w-full"
               src="/images/hero_img_3.png"
               alt="illustration"
             /> -->
           </div>
+
         </div>
       </div>
     </section>
