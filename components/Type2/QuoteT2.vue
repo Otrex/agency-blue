@@ -37,7 +37,9 @@
             </form>
           </template>
           <template v-else>
-            <div v-html="data?.agency_wizard.leads_collector"></div>
+            <div class="w-full pr-[1rem] overflow-hidden"> 
+              <div class="w-full" v-html="data?.agency_wizard.leads_collector"></div>
+            </div>
           </template>
         </div>
         <div class="flex items-center h-full">
