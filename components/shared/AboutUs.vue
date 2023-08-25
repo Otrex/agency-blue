@@ -22,7 +22,7 @@
           >
             About Us
           </h1>
-          <p v-html="data?.agency_wizard.contact.about.about_desc" class="sm:text-[16px] text-[14px] pb-3">
+          <p v-html="data?.agency_wizard.contact.about.about_desc" class="st sm:text-[16px] text-[14px] pb-3">
             
           </p>
           <a href="#leads"> 
@@ -50,5 +50,7 @@ defineProps<{
 </script>
 
 <style>
-
+.st p {
+  @apply mb-2;
+}
 </style>

@@ -17,7 +17,7 @@
               >
                 {{ data?.agency_wizard.contact.help.help_headline || 'Empowering helper'}}
               </h1>
-              <p class="sm:text-[16px] text-[14px] pb-3" v-html="data?.agency_wizard.contact.help.help_desc">
+              <p class="st sm:text-[16px] text-[14px] pb-3" v-html="data?.agency_wizard.contact.help.help_desc">
                 
               </p>
               <a href="#leads"> 

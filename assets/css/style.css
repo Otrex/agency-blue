@@ -69,3 +69,30 @@ input:focus {
 .fade-leave-to {
   opacity: 0;
 }
+
+.st p {
+  @apply mb-2;
+}
+
+.st {
+  @apply w-full inline-block;
+}
+.st > * {
+  @apply !mb-[1rem] break-words whitespace-pre-wrap;
+}
+.st ul,
+.st ol {
+  @apply ml-[1rem];
+}
+
+.st ul {
+  list-style: disc !important;
+}
+
+.st ol {
+  list-style: decimal !important;
+}
+
+ol ~ ul {
+  @apply !ml-[2rem];
+}
