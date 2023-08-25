@@ -25,11 +25,13 @@
           <p v-html="data?.agency_wizard.contact.about.about_desc" class="sm:text-[16px] text-[14px] pb-3">
             
           </p>
-          <button
-            :class="`py-3 px-6 ${buttonBg || 'bg-[#333]'} rounded-full text-white mt-[20px]`"
-          >
-            Contact Us
-          </button>
+          <a href="#leads"> 
+            <button
+              :class="`py-3 px-6 ${buttonBg || 'bg-[#333]'} rounded-full text-white mt-[20px]`"
+            >
+              Contact Us
+            </button>
+          </a>
         </div>
       </div>
     </section>

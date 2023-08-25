@@ -1,5 +1,5 @@
 <template>
-  <main class="d-container">
+  <main id="leads" class="d-container">
     <section class="">
       <div
         class="md:rounded-bl-[40px] md:rounded-bl-[40px] rounded-tl-[20px] rounded-tb-[20px] bg-[#3B57F4] grid md:grid-cols-2 items-start w-full"
