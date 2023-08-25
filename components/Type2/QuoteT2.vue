@@ -37,13 +37,13 @@
             </form>
           </template>
           <template v-else>
-            <div class="w-full"> 
+            <div class="w-full pt-[1.5rem] force"> 
               <div class="w-full" v-html="data?.agency_wizard.leads_collector"></div>
             </div>
           </template>
         </div>
         <div class="flex items-center h-full">
-          <img class="" :src="data?.agency_wizard.leads_image || '/images/customer_agent.png'" alt="photo" />
+          <img class=" rounded-tl-[2rem] rounded-bl-[2rem]" :src="data?.agency_wizard.leads_image || '/images/customer_agent.png'" alt="photo" />
         </div>
       </div>
     </section>
@@ -56,4 +56,16 @@ import { WizardResponse } from "../../type";
 defineProps<{ data?: WizardResponse }>();
 </script>
 
-<style></style>
+<style>
+.force * {
+  @apply !text-white !bg-transparent;
+}
+.force input {
+  @apply md:!px-[24px] !px-[12px] md:!py-[20px] !h-auto !py-[16px] !w-full !border md:!rounded-[100px];
+  @apply !rounded-[50px] !border-[#DCDCDC] !bg-transparent lg:!mb-[30px] md:!mb-[24px] !mb-[20px];
+}
+.force input[type="submit"], .force button {
+  @apply lg:!w-[40%] !flex !items-center !justify-center md:!w-[75%] !bg-[#fff] md:!py-[21px] !py-[16px] md:!px-[32px] !px-[20px];
+  @apply md:!text-[20px] !text-[16px] !text-[#3B57F4] !rounded-[100px] !h-auto;
+}
+</style>
